@@ -1,40 +1,44 @@
 # BarBridge
 
-**GS1 Sunrise 2027 に対応した、1次元・2次元バーコードの統合生成ライブラリ（開発中）**
+English | [日本語](README.ja.md)
 
-## これは何か
+**A unified 1D/2D barcode generation library for GS1 Sunrise 2027 (in development)**
 
-2027 年、GS1 は小売 POS におけるバーコード運用を、従来の 1 次元バーコード（EAN/UPC 等）単体から、
-2 次元バーコード（GS1 QR Code / GS1 DataMatrix）を併用する体制へ移行する方針を掲げています
-（GS1 Sunrise 2027）。これにより、GTIN に加えてロット番号・有効期限などの属性情報を 1 つのシンボルで
-扱えるようになる一方、店舗・事業者側は移行期間中、両方式のバーコードを適切なサイズ・配置で共存させる
-必要があります。
+## What this is
 
-BarBridge は、この移行期を見据え、GS1 の仕様に準拠した形で 1D/2D バーコードを生成するための
-コアライブラリです。
+In 2027, GS1 is moving retail POS barcode practice away from 1D-only symbols (EAN/UPC, etc.)
+toward pairing them with 2D symbols (GS1 QR Code / GS1 DataMatrix) — the **GS1 Sunrise 2027**
+initiative. This lets a single symbol carry attribute data such as lot number and expiration
+date alongside the GTIN, but during the transition period, retailers and manufacturers need to
+print both symbol types together, at the right size and layout.
 
-## コンセプト
+BarBridge is a core library built for this transition: it generates 1D/2D barcodes that conform
+to GS1 specifications.
 
-- **GS1 準拠のサイズ最適化**: バーコードの印字サイズ（X 寸法）は GS1 の規定範囲内に収めつつ、
-  指定した出力サイズ（例: 50mm × 50mm）に自動で収まるよう最適な倍率を計算します。
-- **1D + 2D の組み合わせ描画**: 同じ GTIN を表す 1 次元シンボルと 2 次元シンボルを、横並び・縦積み
-  など複数の配置から適切なものを自動選択して組み合わせます。
-- **マルチプラットフォーム・マルチ言語**: コアロジックを単一の実装として持ち、Windows / macOS / Linux
-  の各 OS、および複数のプログラミング言語・実行環境から利用できる構成を目指しています。
-- **印刷・画面表示の両対応**: ラスタ画像、PNG、SVG（ベクタ）など、印刷用途・画面プレビュー用途の
-  双方に対応する出力形式を想定しています。
+## Concept
 
-## 対応予定の規格
+- **GS1-compliant size optimization**: computes the optimal scale so the barcode's print size
+  (X-dimension) stays within GS1's specified range while automatically fitting a target output
+  size (e.g. 50mm × 50mm).
+- **Combined 1D + 2D rendering**: automatically selects an appropriate arrangement (side-by-side,
+  stacked, etc.) to pair a 1D symbol and a 2D symbol representing the same GTIN.
+- **Cross-platform, multi-language**: a single core implementation targeting Windows / macOS /
+  Linux, designed to be callable from multiple programming languages and runtimes.
+- **Print and on-screen output**: targets both raster (for printing) and vector output (SVG, for
+  on-screen preview), plus PNG.
 
-- 1 次元: GTIN 系（EAN-13 / EAN-8 / UPC-A / UPC-E）、GS1-128 など
-- 2 次元: GS1 QR Code、GS1 DataMatrix
-- GS1 Digital Link（URI 形式での GTIN・属性情報の表現）
+## Planned standard support
 
-## 現在のステータス
+- 1D: GTIN family (EAN-13 / EAN-8 / UPC-A / UPC-E), GS1-128, etc.
+- 2D: GS1 QR Code, GS1 DataMatrix
+- GS1 Digital Link (URI representation of GTIN and attribute data)
 
-開発中です。本リポジトリは **コンセプト・方針の公開** を目的としており、実装コード・バイナリ配布物は
-現時点では含まれていません。公開範囲は今後の開発状況に応じて拡大していく予定です。
+## Current status
 
-## ライセンス
+In development. This repository exists to share the **concept and direction** publicly; it does
+not currently include implementation code or binary distributions. Scope will expand as
+development progresses.
 
-未定（検討中）。
+## License
+
+Undecided (under consideration).
