@@ -2,7 +2,7 @@
 
 English | [日本語](README.ja.md)
 
-**A unified 1D/2D barcode generation library for GS1 Sunrise 2027 (in development)**
+**A unified 1D/2D barcode generation library for GS1 Sunrise 2027, written in Rust (in development)**
 
 ## What this is
 
@@ -22,6 +22,9 @@ to GS1 specifications.
   size (e.g. 50mm × 50mm).
 - **Combined 1D + 2D rendering**: automatically selects an appropriate arrangement (side-by-side,
   stacked, etc.) to pair a 1D symbol and a 2D symbol representing the same GTIN.
+- **Written in Rust**: a single safe, memory-efficient Rust core, exposed to other languages via
+  a C ABI and language-specific bindings (no runtime dependency on a JVM, Node, or Python
+  interpreter required for the core).
 - **Cross-platform, multi-language**: a single core implementation targeting Windows / macOS /
   Linux, designed to be callable from multiple programming languages and runtimes.
 - **Print and on-screen output**: targets both raster (for printing) and vector output (SVG, for
